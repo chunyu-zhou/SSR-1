@@ -147,23 +147,23 @@ function pre_install(){
 # Download files
 function download_files(){
     #Download libsodium file
-    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://github.com/crazy886/SSR/releases/download/libsodium1.0.10/libsodium-1.0.10.tar.gz; then
+    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://github.com/jae-jae/SSR-1/raw/master/packages/libsodium-1.0.10.tar.gz; then
         echo -e "\033[31m 下载 libsodium 文件失败！\033[0m"
         exit 1
     fi
     # Download ShadowsocksR file
-    # if ! wget --no-check-certificate -O manyuser.zip https://github.com/crazy886/SSR/releases/download/libsodium1.0.10/shadowsocks-manyuser.zip; then
+    # if ! wget --no-check-certificate -O manyuser.zip https://github.com/jae-jae/SSR-1/raw/master/packages/shadowsocks-manyuser.zip; then
         # echo "Failed to download ShadowsocksR file!"
         # exit 1
     # fi
     # Download ShadowsocksR chkconfig file
     if [ "$OS" == 'CentOS' ]; then
-        if ! wget --no-check-certificate https://github.com/crazy886/SSR/releases/download/libsodium1.0.10/ShadowsocksR -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://github.com/jae-jae/SSR-1/raw/master/packages/ShadowsocksR -O /etc/init.d/shadowsocks; then
             echo -e "\033[31m 下载 ShadowsocksR 文件失败！\033[0m"
             exit 1
         fi
     else
-        if ! wget --no-check-certificate https://github.com/crazy886/SSR/releases/download/libsodium1.0.10/ShadowsocksR-debian -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://github.com/jae-jae/SSR-1/raw/master/packages/ShadowsocksR-debian -O /etc/init.d/shadowsocks; then
             echo -e "\033[31m 下载 ShadowsocksR-debian 文件失败！\033[0m"
             exit 1
         fi
